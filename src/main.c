@@ -30,7 +30,6 @@
 #include "main.h"
 #include "build-config.h"
 
-#include "paint_cursor.xpm"
 #include "erase_cursor.xpm"
 
 
@@ -558,11 +557,9 @@ void setup_main_app (GromitData *data, int argc, char ** argv)
   /* 
      CURSORS
   */
-  GdkPixbuf* paint_cursor_pixbuf = gdk_pixbuf_new_from_xpm_data(paint_cursor_xpm);
-  data->paint_cursor = gdk_cursor_new_from_pixbuf(data->display,
-						  paint_cursor_pixbuf,
-						  paint_cursor_x_hot,
-						  paint_cursor_y_hot);
+  GError *error = NULL;
+  GdkPixbuf* paint_cursor_pixbuf = gdk_pixbuf_new_from_file("/usr/local/share/paint_cursor.png", &error);
+  data->paint_cursor = gdk_cursor_new_from_pixbuf(data->display, paint_cursor_pixbuf, 64, 64);
   g_object_unref (paint_cursor_pixbuf);
 
   GdkPixbuf* erase_cursor_pixbuf = gdk_pixbuf_new_from_xpm_data(erase_cursor_xpm);

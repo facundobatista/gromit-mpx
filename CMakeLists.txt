@@ -58,7 +58,6 @@ set(sources
     src/main.h
     src/input.c
     src/input.h
-    src/paint_cursor.xpm
     src/erase_cursor.xpm
 )
 
@@ -92,6 +91,7 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/es.gmo DESTINATION ${CMAKE_INSTALL_DAT
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/it.gmo DESTINATION ${CMAKE_INSTALL_DATADIR}/locale/it/LC_MESSAGES/ RENAME ${LOCALE_DOMAIN}.mo)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/fa.gmo DESTINATION ${CMAKE_INSTALL_DATADIR}/locale/fa/LC_MESSAGES/ RENAME ${LOCALE_DOMAIN}.mo)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/he.gmo DESTINATION ${CMAKE_INSTALL_DATADIR}/locale/he/LC_MESSAGES/ RENAME ${LOCALE_DOMAIN}.mo)
+install(FILES data/paint_cursor.png DESTINATION ${CMAKE_INSTALL_DATADIR})
 
 configure_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
